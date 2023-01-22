@@ -1,6 +1,6 @@
-<h1>Sign up</h1>
+<h1>Edit Password</h1>
 
-<%= form_with model: Current.user, url: sign_up_path, data: {turbo: false} do |form| %>
+<%= form_with model: Current.user, url: edit_password_path, data: {turbo: false} do |form| %>
   <% if form.object.errors.any?%>
     <div class="alert alert-danger">
       <% form.object.errors.full_messages.each do |message| %>
@@ -8,10 +8,6 @@
     <% end %>
   </div>
   <% end %>
-  <div class="mb-3">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "alex@greetabl.com" %>
-  </div>
   <div class="mb-3">
     <%= form.label :password %>
     <%= form.password_field :password, class: "form-control", placeholder: "Password"%>
@@ -22,7 +18,7 @@
   </div>
 
   <div class="mb-3">
-    <%= form.submit "Sign Up!", class: "btn btn-primary" %>
+    <%= form.submit "Update Password", class: "btn btn-primary" %>
   </div>
 
 <% end %>
